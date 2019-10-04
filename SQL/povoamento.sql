@@ -256,3 +256,39 @@ INSERT INTO Usuario(usuario_id, idade) VALUES (3, 54);
 
 --
 
+-- RELAÇÕES 
+
+INSERT INTO Pessoa(nome, email, ID) VALUES (Raquel Costa, freitasgustavo-henrique@yahoo.com.br, 1);
+INSERT INTO Pessoa(nome, email, ID) VALUES (Srta. Isis Barros, sabrina81@novaes.br, 2);
+INSERT INTO Pessoa(nome, email, ID) VALUES (Igor Monteiro, olivia85@hotmail.com, 3);
+
+--
+
+INSERT INTO Artista(artista_id, artista_site) VALUES (1, https://da.com/);
+INSERT INTO Artista(artista_id, artista_site) VALUES (2, https://www.rocha.net/);
+
+--
+
+INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 97874 5272);
+INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 98602 6920);
+INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 91351 4914);
+INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 91769 9786);
+
+--
+
+INSERT INTO Usuario(usuario_id, idade) VALUES (3, 74);
+
+--
+
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (1, Occaecati repudiandae itaque inventore unde labore., 630);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (2, Error aut nam asperiores., 1180);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (3, Et maxime quam., 393);
+
+--
+
+INSERT INTO Musica(id_musica, genero) VALUES (4, Rap);
+INSERT INTO Musica(id_musica, genero) VALUES (3, Funk);
+INSERT INTO Musica(id_musica, genero) VALUES (2, Pop);
+
+--
+
