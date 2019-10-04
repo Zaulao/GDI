@@ -1,294 +1,232 @@
-INSERT INTO Pessoa VALUES ('Luan', 'lab7@cin.ufpe.br', ID.NEXTVAL)
-INSERT INTO Pessoa VALUES ('Vitor', 'vlma@cin.ufpe.br', ID.NEXTVAL)
-INSERT INTO Pessoa VALUES ('Luan', 'lab7@cin.ufpe.br', ID.NEXTVAL)
-INSERT INTO Pessoa VALUES ('Lucio', 'lfmm2@cin.ufpe.br', ID.NEXTVAL)
-INSERT INTO Pessoa VALUES ('Eden', 'eeas@cin.ufpe.br', ID.NEXTVAL)
-INSERT INTO Pessoa VALUES ('Saulo', 'sfgl@cin.ufpe.br', ID.NEXTVAL)
+-- INSERT INTO Pessoa VALUES ('Luan', 'lab7@cin.ufpe.br', ID.NEXTVAL)
+-- INSERT INTO Pessoa VALUES ('Vitor', 'vlma@cin.ufpe.br', ID.NEXTVAL)
+-- INSERT INTO Pessoa VALUES ('Luan', 'lab7@cin.ufpe.br', ID.NEXTVAL)
+-- INSERT INTO Pessoa VALUES ('Lucio', 'lfmm2@cin.ufpe.br', ID.NEXTVAL)
+-- INSERT INTO Pessoa VALUES ('Eden', 'eeas@cin.ufpe.br', ID.NEXTVAL)
+-- INSERT INTO Pessoa VALUES ('Saulo', 'sfgl@cin.ufpe.br', ID.NEXTVAL)
 
-UPDATE Pessoa SET nome = 'mary jane', email = 'mj@cin.ufpe.br' WHERE ID = 3
+-- UPDATE Pessoa SET nome = 'mary jane', email = 'mj@cin.ufpe.br' WHERE ID = 3
 
-SELECT * FROM Pessoa order by nome
+-- SELECT * FROM Pessoa order by nome
 
-INSERT INTO Usuario VALUES (1, 21)
-INSERT INTO Usuario VALUES (2, 17)
-INSERT INTO Usuario VALUES (3, 6560)
-INSERT INTO Usuario VALUES (4, 2045)
+-- INSERT INTO Usuario VALUES (1, 21)
+-- INSERT INTO Usuario VALUES (2, 17)
+-- INSERT INTO Usuario VALUES (3, 6560)
+-- INSERT INTO Usuario VALUES (4, 2045)
 
-SELECT * FROM Usuario order by usuario_id
+-- SELECT * FROM Usuario order by usuario_id
 
-INSERT INTO Artista VALUES (4, 'roque-do-lucio.com');
-INSERT INTO Artista VALUES (5, 'brega-do-eden.com');
-INSERT INTO Artista VALUES (6, 'classico-do-zaulao.com');
+-- INSERT INTO Artista VALUES (4, 'roque-do-lucio.com');
+-- INSERT INTO Artista VALUES (5, 'brega-do-eden.com');
+-- INSERT INTO Artista VALUES (6, 'classico-do-zaulao.com');
 
-SELECT * FROM Artista order by artista_id;
+-- SELECT * FROM Artista order by artista_id;
 
-INSERT INTO Telefone VALUES (4, 666)
-INSERT INTO Telefone VALUES (4, 777)
-INSERT INTO Telefone VALUES (5, 696969)
-INSERT INTO Telefone VALUES (6, 300)
+-- INSERT INTO Telefone VALUES (4, 666)
+-- INSERT INTO Telefone VALUES (4, 777)
+-- INSERT INTO Telefone VALUES (5, 696969)
+-- INSERT INTO Telefone VALUES (6, 300)
 
-SELECT * FROM Telefone;
+-- SELECT * FROM Telefone;
 
-SELECT A.artista_id, P.nome, T.telefone FROM Pessoa P, Artista A, Telefone T WHERE A.artista_id = T.artista_id AND A.artista_id = P.id
+-- SELECT A.artista_id, P.nome, T.telefone FROM Pessoa P, Artista A, Telefone T WHERE A.artista_id = T.artista_id AND A.artista_id = P.id
 
-SELECT * FROM Musica
+-- SELECT * FROM Musica
 
-INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Breguinha Gostoso', 3000)
-INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Rock Pesado', 3000)
-INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Classico longo', 8000)
-INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'jazz suave', 3232)
-INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Gospel Satânico', 666)
+-- INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Breguinha Gostoso', 3000)
+-- INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Rock Pesado', 3000)
+-- INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Classico longo', 8000)
+-- INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'jazz suave', 3232)
+-- INSERT INTO Musica VALUES (musica_id.NEXTVAL, 'Gospel Satânico', 666)
 
-INSERT INTO Musica(musica_id, duracao_segundos) VALUES (musica_id.NEXTVAL, 2000)
+-- INSERT INTO Musica(musica_id, duracao_segundos) VALUES (musica_id.NEXTVAL, 2000)
 
-SELECT * FROM MUSICA WHERE duracao_segundos BETWEEN 300 AND 3000
+-- SELECT * FROM MUSICA WHERE duracao_segundos BETWEEN 300 AND 3000
 
-DELETE FROM Musica WHERE nome IS NULL
+-- DELETE FROM Musica WHERE nome IS NULL
 
-SELECT * FROM MUSICA WHERE duracao_segundos BETWEEN 300 AND 3000
-
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES ({nome}, {email}, {ID});
-
---
-
-INSERT INTO Artista(artista_id, artista_site) VALUES ({ID}, {artista_site.website[0]});
--- RELAÇÕES 
+-- SELECT * FROM MUSICA WHERE duracao_segundos BETWEEN 300 AND 3000
 
 -- RELAÇÕES 
 
-INSERT INTO Pessoa(nome, email, ID) VALUES (Maria Julia Caldeira, rafaelada-conceicao@cunha.com, 1);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Davi Rocha', 'imoraes@nunes.br', 1);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Bernardo Campos', 'emanuelcorreia@hotmail.com', 2);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Sophie da Paz', 'tsilva@oliveira.br', 3);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Dr. Danilo Nascimento', 'sfarias@gomes.br', 4);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Lívia Costa', 'costatheo@rezende.br', 5);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Rafaela Oliveira', 'ksales@uol.com.br', 6);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Heitor Almeida', 'brunoviana@bol.com.br', 7);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Luiz Gustavo da Rosa', 'marianeda-rocha@costela.com', 8);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Pedro Lucas Fernandes', 'caueda-luz@vieira.org', 9);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Luigi Rocha', 'nicole36@ferreira.com', 10);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Davi Luiz Lima', 'kevin28@costela.com', 11);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Samuel Ribeiro', 'oliveiraaugusto@uol.com.br', 12);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Juan Pinto', 'ycosta@melo.br', 13);
+INSERT INTO Pessoa(nome, email, ID) VALUES ('Vitor Cunha', 'caroline68@da.br', 14);
 
 --
 
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Maria Lima, milena62@silva.com, 1);
-
---
-
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Mirella Pereira, alexiamoura@alves.com, 1);
+INSERT INTO Artista(artista_id, artista_site) VALUES (1, 'http://www.araujo.org/');
+INSERT INTO Artista(artista_id, artista_site) VALUES (2, 'https://oliveira.org/');
+INSERT INTO Artista(artista_id, artista_site) VALUES (3, 'https://www.silva.org/');
+INSERT INTO Artista(artista_id, artista_site) VALUES (4, 'https://www.cunha.br/');
 
 --
 
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Ana Luiza Pires, olivia75@melo.com, 1);
-
---
-
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Sr. João Pedro Melo, mcardoso@gomes.br, 1);
+INSERT INTO Telefone(artista_id, telefone) VALUES (1, '+55 96105 1530');
+INSERT INTO Telefone(artista_id, telefone) VALUES (2, '+55 93763 3852');
+INSERT INTO Telefone(artista_id, telefone) VALUES (3, '+55 97948 5516');
+INSERT INTO Telefone(artista_id, telefone) VALUES (4, '+55 90547 9346');
 
 --
 
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Heitor Martins, afreitas@bol.com.br, 1);
-
---
-
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Davi Luiz Vieira, cunhajoao-gabriel@hotmail.com, 1);
-
---
-
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Gustavo da Luz, ribeirovitor-gabriel@uol.com.br, 1);
+INSERT INTO Usuario(usuario_id, idade) VALUES (5, 13);
+INSERT INTO Usuario(usuario_id, idade) VALUES (6, 96);
+INSERT INTO Usuario(usuario_id, idade) VALUES (7, 7);
+INSERT INTO Usuario(usuario_id, idade) VALUES (8, 23);
+INSERT INTO Usuario(usuario_id, idade) VALUES (9, 47);
+INSERT INTO Usuario(usuario_id, idade) VALUES (10, 34);
+INSERT INTO Usuario(usuario_id, idade) VALUES (11, 63);
+INSERT INTO Usuario(usuario_id, idade) VALUES (12, 5);
+INSERT INTO Usuario(usuario_id, idade) VALUES (13, 71);
+INSERT INTO Usuario(usuario_id, idade) VALUES (14, 32);
 
 --
 
-INSERT INTO Artista(artista_id, artista_site) VALUES (2, http://jesus.org/);
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Davi Lucca Santos, rpinto@gmail.com, 1);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Giovanna das Neves, sramos@da.net, 2);
-
---
-
-INSERT INTO Artista(artista_id, artista_site) VALUES (3, http://www.peixoto.br/);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 99195 9122);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 94198 9113);
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Lara Cunha, rafaelpeixoto@yahoo.com.br, 1);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Anthony da Costa, luanafernandes@pereira.org, 2);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Rafaela da Rocha, barbarada-mata@araujo.br, 3);
-
---
-
-INSERT INTO Artista(artista_id, artista_site) VALUES (1, https://pinto.br/);
-INSERT INTO Artista(artista_id, artista_site) VALUES (2, https://www.mendes.br/);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (1, 'Mollitia consequatur enim placeat culpa.', 870);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (2, 'Sunt maxime est fuga eaque voluptatibus.', 113);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (3, 'Doloribus iusto ut ipsam.', 262);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (4, 'Corrupti in placeat iusto atque maiores.', 988);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (5, 'Velit reprehenderit rem sunt autem.', 592);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (6, 'Aspernatur hic similique quasi ipsa.', 1199);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (7, 'Placeat minus numquam corrupti consequuntur praesentium.', 1347);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (8, 'Consectetur possimus nostrum laudantium commodi fugiat.', 179);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (9, 'Qui ut officiis deleniti nesciunt iure qui officiis.', 1263);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (10, 'Ut sint pariatur laudantium ad.', 1269);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (11, 'Illum qui repellendus.', 352);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (12, 'Perferendis iste omnis possimus eum voluptas blanditiis.', 955);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (13, 'Reprehenderit cumque cupiditate libero incidunt quos voluptates.', 1709);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (14, 'Doloremque sint sit reprehenderit delectus eligendi labore expedita.', 1221);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (15, 'Distinctio voluptates ullam tenetur.', 423);
 
 --
 
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 96507 4897);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 99841 1138);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 98235 1635);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 92361 4049);
+INSERT INTO Genero(id_musica, genero) VALUES (1, 'Rock');
+INSERT INTO Genero(id_musica, genero) VALUES (2, 'Jazz');
+INSERT INTO Genero(id_musica, genero) VALUES (3, 'Rap');
+INSERT INTO Genero(id_musica, genero) VALUES (4, 'Rock');
+INSERT INTO Genero(id_musica, genero) VALUES (5, 'Rap');
+INSERT INTO Genero(id_musica, genero) VALUES (6, 'Rap');
+INSERT INTO Genero(id_musica, genero) VALUES (7, 'Pop');
+INSERT INTO Genero(id_musica, genero) VALUES (8, 'Funk');
+INSERT INTO Genero(id_musica, genero) VALUES (9, 'Rock');
+INSERT INTO Genero(id_musica, genero) VALUES (10, 'Rap');
+INSERT INTO Genero(id_musica, genero) VALUES (11, 'Funk');
+INSERT INTO Genero(id_musica, genero) VALUES (12, 'Jazz');
+INSERT INTO Genero(id_musica, genero) VALUES (13, 'Pop');
+INSERT INTO Genero(id_musica, genero) VALUES (14, 'Rock');
+INSERT INTO Genero(id_musica, genero) VALUES (15, 'Pop');
 
 --
 
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Enzo Martins, lucas-gabriel01@ramos.br, 1);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Luiz Gustavo Gonçalves, rezendeluna@moreira.net, 2);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Eloah Duarte, limarafaela@moraes.br, 3);
+INSERT INTO Album(album_id, nome, data_lancamento) VALUES (1, 'Labore sequi laborum facere repellat.', '1970-7-9');
+INSERT INTO Album(album_id, nome, data_lancamento) VALUES (2, 'Eveniet molestiae sed fugiat aspernatur.', '2007-4-8');
+INSERT INTO Album(album_id, nome, data_lancamento) VALUES (3, 'Sunt illum dignissimos amet ab.', '1926-6-14');
 
 --
 
-INSERT INTO Artista(artista_id, artista_site) VALUES (1, https://almeida.net/);
-INSERT INTO Artista(artista_id, artista_site) VALUES (2, https://www.da.br/);
+INSERT INTO Playlist(id_dono, nome) VALUES (5, 'Ad saepe tempore sunt rerum.');
+INSERT INTO Playlist(id_dono, nome) VALUES (6, 'Quisquam itaque iusto impedit molestias voluptatum saepe voluptatibus.');
+INSERT INTO Playlist(id_dono, nome) VALUES (7, 'Nesciunt distinctio id quo in.');
+INSERT INTO Playlist(id_dono, nome) VALUES (8, 'Delectus saepe ratione eum itaque saepe.');
+INSERT INTO Playlist(id_dono, nome) VALUES (9, 'Dolores quis suscipit excepturi.');
+INSERT INTO Playlist(id_dono, nome) VALUES (10, 'Aperiam soluta similique harum aperiam.');
+INSERT INTO Playlist(id_dono, nome) VALUES (11, 'Beatae cupiditate sapiente omnis quidem molestias atque.');
+INSERT INTO Playlist(id_dono, nome) VALUES (12, 'Illo in soluta tempore reprehenderit vero quo.');
+INSERT INTO Playlist(id_dono, nome) VALUES (13, 'Corrupti voluptatem nisi rerum officiis est.');
+INSERT INTO Playlist(id_dono, nome) VALUES (14, 'Incidunt sapiente iusto quos.');
 
 --
 
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 99450 2978);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 95714 6805);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 95921 7141);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 93687 9906);
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (1, 5, 'Ad saepe tempore sunt rerum.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (2, 6, 'Quisquam itaque iusto impedit molestias voluptatum saepe voluptatibus.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (3, 7, 'Nesciunt distinctio id quo in.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (4, 8, 'Delectus saepe ratione eum itaque saepe.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (5, 9, 'Dolores quis suscipit excepturi.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (6, 10, 'Aperiam soluta similique harum aperiam.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (7, 11, 'Beatae cupiditate sapiente omnis quidem molestias atque.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (8, 12, 'Illo in soluta tempore reprehenderit vero quo.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (9, 13, 'Corrupti voluptatem nisi rerum officiis est.');
+INSERT INTO Musica_playlist(id_musica, id_playlist, nome_playlist) VALUES (10, 14, 'Incidunt sapiente iusto quos.');
 
 --
 
-INSERT INTO Usuario(usuario_id, idade) VALUES (3, 45);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (2, 2);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 3);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 4);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 5);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 6);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 7);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 8);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 9);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 10);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 11);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 12);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 13);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 14);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 15);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (2, 2);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 3);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 4);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 5);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 6);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 7);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 8);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 9);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 10);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 11);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 12);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 13);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 14);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 15);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (2, 2);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 3);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 4);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 5);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 6);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 7);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 8);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 9);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 10);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 11);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 12);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 13);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 14);
+INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 15);
 
 --
 
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Maria Vitória Monteiro, joao-pedro75@martins.net, 1);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Joaquim Moura, nfarias@santos.br, 2);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Kaique Rezende, vicentegomes@da.com, 3);
+INSERT INTO Cadastro(id_album, id_artista) VALUE (1, 2);
+INSERT INTO Cadastro(id_album, id_artista) VALUE (2, 2);
+INSERT INTO Cadastro(id_album, id_artista) VALUE (3, 2);
 
 --
 
-INSERT INTO Artista(artista_id, artista_site) VALUES (1, https://oliveira.br/);
-INSERT INTO Artista(artista_id, artista_site) VALUES (2, http://porto.net/);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUE (4, 2);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUE (3, 8);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUE (4, 7);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUE (1, 6);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUE (8, 2);
 
 --
 
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 97404 8943);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 92465 5056);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 90456 7161);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 97426 5439);
-
---
-
-INSERT INTO Usuario(usuario_id, idade) VALUES (3, 98);
-
---
-
-INSERT INTO Musica(musica_id, nome) VALUES (1, Deleniti veniam officia eos explicabo nulla.);
-INSERT INTO Musica(musica_id, nome) VALUES (2, Quod mollitia doloremque perspiciatis.);
-INSERT INTO Musica(musica_id, nome) VALUES (3, Minima assumenda explicabo ullam magnam.);
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Pietro Cunha, marianarodrigues@da.org, 1);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Cauã Caldeira, diogo44@yahoo.com.br, 2);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Alana Nunes, emillyrocha@ferreira.br, 3);
-INSERT INTO Pessoa(nome, email, ID) VALUES (João Lucas Almeida, ribeiroeduarda@ig.com.br, 4);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Srta. Pietra Araújo, nunesgustavo-henrique@hotmail.com, 5);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Gustavo Henrique Monteiro, mariana67@ig.com.br, 6);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Srta. Ana Sophia Lopes, freitasana-beatriz@nunes.com, 7);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Ana Novaes, caua97@hotmail.com, 8);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Danilo Jesus, mouralais@bol.com.br, 9);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Luiz Miguel Rocha, rodrigorodrigues@da.net, 10);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Dr. Leonardo Novaes, catarinamendes@bol.com.br, 11);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Clarice Novaes, lucas-gabriel82@da.com, 12);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Srta. Amanda Gonçalves, manuela94@ferreira.br, 13);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Isabelly Ferreira, cpires@yahoo.com.br, 14);
-
---
-
-INSERT INTO Artista(artista_id, artista_site) VALUES (1, http://araujo.com/);
-INSERT INTO Artista(artista_id, artista_site) VALUES (2, http://oliveira.br/);
-
---
-
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 91080 1250);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 96610 2457);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 96487 7203);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 98990 9626);
-
---
-
-INSERT INTO Usuario(usuario_id, idade) VALUES (3, 56);
-INSERT INTO Usuario(usuario_id, idade) VALUES (4, 16);
-INSERT INTO Usuario(usuario_id, idade) VALUES (5, 52);
-INSERT INTO Usuario(usuario_id, idade) VALUES (6, 92);
-INSERT INTO Usuario(usuario_id, idade) VALUES (7, 96);
-INSERT INTO Usuario(usuario_id, idade) VALUES (8, 25);
-INSERT INTO Usuario(usuario_id, idade) VALUES (9, 44);
-INSERT INTO Usuario(usuario_id, idade) VALUES (10, 41);
-INSERT INTO Usuario(usuario_id, idade) VALUES (11, 15);
-INSERT INTO Usuario(usuario_id, idade) VALUES (12, 13);
-INSERT INTO Usuario(usuario_id, idade) VALUES (13, 21);
-INSERT INTO Usuario(usuario_id, idade) VALUES (14, 41);
-
---
-
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Beatriz Lima, viniciuspinto@bol.com.br, 1);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Helena Peixoto, luigimoraes@hotmail.com, 2);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Vitor Hugo Pires, barrossarah@hotmail.com, 3);
-
---
-
-INSERT INTO Artista(artista_id, artista_site) VALUES (1, http://www.rodrigues.com/);
-INSERT INTO Artista(artista_id, artista_site) VALUES (2, http://www.fernandes.br/);
-
---
-
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 99131 1196);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 90346 1620);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 94426 6973);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 93056 0012);
-
---
-
-INSERT INTO Usuario(usuario_id, idade) VALUES (3, 54);
-
---
-
--- RELAÇÕES 
-
-INSERT INTO Pessoa(nome, email, ID) VALUES (Raquel Costa, freitasgustavo-henrique@yahoo.com.br, 1);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Srta. Isis Barros, sabrina81@novaes.br, 2);
-INSERT INTO Pessoa(nome, email, ID) VALUES (Igor Monteiro, olivia85@hotmail.com, 3);
-
---
-
-INSERT INTO Artista(artista_id, artista_site) VALUES (1, https://da.com/);
-INSERT INTO Artista(artista_id, artista_site) VALUES (2, https://www.rocha.net/);
-
---
-
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 97874 5272);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 98602 6920);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 91351 4914);
-INSERT INTO Telefone(artista_id, telefone) VALUES (3, +55 91769 9786);
-
---
-
-INSERT INTO Usuario(usuario_id, idade) VALUES (3, 74);
-
---
-
-INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (1, Occaecati repudiandae itaque inventore unde labore., 630);
-INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (2, Error aut nam asperiores., 1180);
-INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (3, Et maxime quam., 393);
-
---
-
-INSERT INTO Musica(id_musica, genero) VALUES (4, Rap);
-INSERT INTO Musica(id_musica, genero) VALUES (3, Funk);
-INSERT INTO Musica(id_musica, genero) VALUES (2, Pop);
-
---
-
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (1, 12, 9, 'Dolores quis suscipit excepturi.', '1976-10-26 10:38:44');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (1, 11, 10, 'Aperiam soluta similique harum aperiam.', '2013-10-9 3:55:25');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (1, 1, 9, 'Dolores quis suscipit excepturi.', '1942-9-13 3:35:48');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (4, 1, 9, 'Dolores quis suscipit excepturi.', '2013-11-4 10:34:41');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (2, 12, 10, 'Aperiam soluta similique harum aperiam.', '1966-6-19 11:48:35');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (2, 1, 8, 'Delectus saepe ratione eum itaque saepe.', '1944-3-17 11:56:18');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (5, 4, 9, 'Dolores quis suscipit excepturi.', '1978-9-5 8:4:46');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (7, 1, 9, 'Dolores quis suscipit excepturi.', '1971-1-20 11:42:44');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (6, 10, 11, 'Beatae cupiditate sapiente omnis quidem molestias atque.', '2010-3-11 6:52:28');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (6, 4, 7, 'Nesciunt distinctio id quo in.', '1948-2-22 8:53:52');
