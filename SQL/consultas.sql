@@ -31,3 +31,34 @@ SELECT Count(*) QTD, genero FROM Genero GROUP BY genero HAVING COUNT(*) > 3;
 SELECT ID FROM Pessoa
 INTERSECT
 SELECT musica_id FROM Musica;
+
+CREATE VIEW LONG_MUSIC AS
+SELECT * FROM Musica WHERE duracao_segundos > 900;
+
+SELECT nome 
+FROM Pessoa WHERE ID
+IN (
+    SELECT id_seguido 
+    FROM Segue
+);
+
+SELECT nome FROM Musica
+WHERE duracao_segundos > (
+    SELECT AVG(duracao_segundos) 
+    FROM Musica 
+    WHERE duracao_segundos > 300
+);
+
+SELECT nome, ID FROM Pessoa
+WHERE ID <> 
+ALL(
+    SELECT id_dono FROM Playlist
+);
+
+SELECT usuario_id, idade FROM Usuario
+WHERE idade >= ANY (
+    SELECT idade FROM Usuario
+    WHERE usuario_id > 9
+);
+
+REVOKE SELECT ON Cadastro FROM PUBLIC;
