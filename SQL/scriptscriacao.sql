@@ -52,7 +52,7 @@ ALTER TABLE Musica ADD duracao_segundos INT NOT NULL
 
 CREATE TABLE Genero( 
     id_musica INT NOT NULL, 
-    genero VARCHAR2(255), 
+    genero VARCHAR2(255) NOT NULL, 
     CONSTRAINT genero_pk PRIMARY KEY (id_musica, genero), 
     CONSTRAINT genero_fk FOREIGN KEY (id_musica) REFERENCES Musica(musica_id) 
 )
