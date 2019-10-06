@@ -11,3 +11,4 @@ FROM Reproduz
 WHERE nome_playlist IN ('Dolores quis suscipit excepturi', 'Beatae cupiditate sapiente omnis quidem molestias atque.')
 ORDER BY momento;
 
+SELECT nome FROM Musica WHERE musica_id BETWEEN 5 AND 9;

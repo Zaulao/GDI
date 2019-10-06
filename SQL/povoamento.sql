@@ -175,58 +175,30 @@ INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 12);
 INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 13);
 INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 14);
 INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 15);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (2, 2);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 3);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 4);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 5);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 6);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 7);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 8);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 9);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 10);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 11);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 12);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 13);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 14);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 15);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (2, 2);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 3);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 4);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 5);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 6);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 7);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 8);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 9);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 10);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 11);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 12);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 13);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 14);
-INSERT INTO Album_musica(id_album, id_musica) VALUES (3, 15);
 
 --
 
-INSERT INTO Cadastro(id_album, id_artista) VALUE (1, 2);
-INSERT INTO Cadastro(id_album, id_artista) VALUE (2, 2);
-INSERT INTO Cadastro(id_album, id_artista) VALUE (3, 2);
+INSERT INTO Cadastro(id_album, id_artista) VALUES (1, 2);
+INSERT INTO Cadastro(id_album, id_artista) VALUES (2, 2);
+INSERT INTO Cadastro(id_album, id_artista) VALUES (3, 2);
 
 --
 
-INSERT INTO Segue(id_seguidor, id_seguido) VALUE (4, 2);
-INSERT INTO Segue(id_seguidor, id_seguido) VALUE (3, 8);
-INSERT INTO Segue(id_seguidor, id_seguido) VALUE (4, 7);
-INSERT INTO Segue(id_seguidor, id_seguido) VALUE (1, 6);
-INSERT INTO Segue(id_seguidor, id_seguido) VALUE (8, 2);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUES (4, 2);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUES (3, 8);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUES (4, 7);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUES (1, 6);
+INSERT INTO Segue(id_seguidor, id_seguido) VALUES (8, 2);
 
 --
 
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (1, 12, 9, 'Dolores quis suscipit excepturi.', '1976-10-26 10:38:44');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (1, 11, 10, 'Aperiam soluta similique harum aperiam.', '2013-10-9 3:55:25');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (1, 1, 9, 'Dolores quis suscipit excepturi.', '1942-9-13 3:35:48');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (4, 1, 9, 'Dolores quis suscipit excepturi.', '2013-11-4 10:34:41');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (2, 12, 10, 'Aperiam soluta similique harum aperiam.', '1966-6-19 11:48:35');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (2, 1, 8, 'Delectus saepe ratione eum itaque saepe.', '1944-3-17 11:56:18');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (5, 4, 9, 'Dolores quis suscipit excepturi.', '1978-9-5 8:4:46');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (7, 1, 9, 'Dolores quis suscipit excepturi.', '1971-1-20 11:42:44');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (6, 10, 11, 'Beatae cupiditate sapiente omnis quidem molestias atque.', '2010-3-11 6:52:28');
-INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUE (6, 4, 7, 'Nesciunt distinctio id quo in.', '1948-2-22 8:53:52');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (1, 12, 9, 'Dolores quis suscipit excepturi.', '1976-10-26 10:38:44');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (1, 11, 10, 'Aperiam soluta similique harum aperiam.', '2013-10-9 3:55:25');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (1, 1, 9, 'Dolores quis suscipit excepturi.', '1942-9-13 3:35:48');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (4, 1, 9, 'Dolores quis suscipit excepturi.', '2013-11-4 10:34:41');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (2, 12, 10, 'Aperiam soluta similique harum aperiam.', '1966-6-19 11:48:35');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (2, 1, 8, 'Delectus saepe ratione eum itaque saepe.', '1944-3-17 11:56:18');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (5, 4, 9, 'Dolores quis suscipit excepturi.', '1978-9-5 8:4:46');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (7, 1, 9, 'Dolores quis suscipit excepturi.', '1971-1-20 11:42:44');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (6, 10, 11, 'Beatae cupiditate sapiente omnis quidem molestias atque.', '2010-3-11 6:52:28');
+INSERT INTO Reproduz(id_pessoa, id_musica, id_playlist, nome_playlist, momento) VALUES (6, 4, 7, 'Nesciunt distinctio id quo in.', '1948-2-22 8:53:52');
