@@ -50,3 +50,39 @@ FROM Musica;
 RETURN n;
 END;
 /
+
+
+CREATE OR REPLACE PROCEDURE duracaoAlbum(
+   in_album_id INT
+) IS
+   CURSOR cursor_album IS
+      SELECT * from Album A WHERE (a.album_id = in_album_id);
+   v_id Album.album_id%type;
+   v_nome Album.nome%type;
+   v_data_lancamento Album.data_lancamento%type;
+   v_musica_id Musica.musica_id%type;
+   v_musica_nome Musica.nome%type;
+   v_musica_duracao_segundos Musica.duracao_segundos%type;
+   CURSOR c_musica IS
+      SELECT SUM(M.duracao_segundos) from Musica M, Album_Musica AM WHERE (M.musica_id = AM.id_musica AND AM.id_album = in_album_id );
+   BEGIN
+      OPEN cursor_album;
+      OPEN c_musica;
+      LOOP
+         FETCH cursor_album INTO v_id, v_nome, v_data_lancamento;
+         EXIT WHEN cursor_album%NOTFOUND;
+         dbms_output.put_line('Nome do album: ' || v_nome);
+      END LOOP;
+        LOOP
+         FETCH c_musica INTO v_musica_duracao_segundos;
+         EXIT WHEN c_musica%NOTFOUND;
+         dbms_output.put_line('Duração: ' || v_musica_duracao_segundos);
+      END LOOP;
+      CLOSE cursor_album;
+      CLOSE c_musica;
+   END;
+
+EXEC duracaoAlbum(2);
+EXEC duracaoAlbum(1);
+EXEC duracaoAlbum(3);
+EXEC duracaoAlbum(4);
