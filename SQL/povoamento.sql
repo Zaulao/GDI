@@ -108,6 +108,7 @@ INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (12, 'Perferendis i
 INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (13, 'Reprehenderit cumque cupiditate libero incidunt quos voluptates.', 1709);
 INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (14, 'Doloremque sint sit reprehenderit delectus eligendi labore expedita.', 1221);
 INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (15, 'Distinctio voluptates ullam tenetur.', 423);
+INSERT INTO Musica(musica_id, nome, duracao_segundos) VALUES (16, '', 600);
 
 --
 
