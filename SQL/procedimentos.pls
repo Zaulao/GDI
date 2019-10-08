@@ -62,7 +62,7 @@ CREATE OR REPLACE PROCEDURE duracaoAlbum(
    v_data_lancamento Album.data_lancamento%type;
    v_musica_id Musica.musica_id%type;
    v_musica_nome Musica.nome%type;
-   v_musica_duracao_segundos Musica.duracao_segundos%type;
+   v_musica_duracao_segundos OUT Musica.duracao_segundos%type;
    CURSOR c_musica IS
       SELECT SUM(M.duracao_segundos) from Musica M, Album_Musica AM WHERE (M.musica_id = AM.id_musica AND AM.id_album = in_album_id );
    BEGIN
@@ -82,7 +82,64 @@ CREATE OR REPLACE PROCEDURE duracaoAlbum(
       CLOSE c_musica;
    END;
 
-EXEC duracaoAlbum(2);
-EXEC duracaoAlbum(1);
 EXEC duracaoAlbum(3);
-EXEC duracaoAlbum(4);
+DECLARE
+   v_duracao;
+BEGIN
+   v_duracao = duracaoAlbum(3);
+   dbms_output.put_line(v_duracao)
+END;
+DECLARE
+   today Date;
+   CURSOR c_usuario id_musica 
+      SELECT * FROM USUARIO;
+   v_id Pessoa.id%type;
+BEGIN
+   today := SYSDATE;
+   OPEN c_usuario;
+   dbms_output.put_line(TO_CHAR(today))
+   LOOP
+      FETCH c_usuario v
+      c_usuario := c_usuario.NEXT;
+      dbms_output.put_line('USUARIO : ' || c_usuario.id);
+   END LOOP
+   CLOSE c_usuario;
+END;
+/
+CREATE OR REPLACE PROCEDURE duracaoAlbum(
+   in_album_id IN Album.album_id%type,
+   v_musica_duracao_segundos OUT Musica.duracao_segundos%type
+) IS
+   CURSOR cursor_album IS
+      SELECT * from Album A WHERE (a.album_id = in_album_id);
+   v_id Album.album_id%type;
+   v_nome Album.nome%type;
+   v_data_lancamento Album.data_lancamento%type;
+   v_musica_id Musica.musica_id%type;
+   v_musica_nome Musica.nome%type;
+   CURSOR c_musica IS
+      SELECT SUM(M.duracao_segundos) from Musica M, Album_Musica AM WHERE (M.musica_id = AM.id_musica AND AM.id_album = in_album_id );
+   BEGIN
+      OPEN cursor_album;
+      OPEN c_musica;
+      LOOP
+         FETCH cursor_album INTO v_id, v_nome, v_data_lancamento;
+         EXIT WHEN cursor_album%NOTFOUND;
+         dbms_output.put_line('Nome do album: ' || v_nome);
+      END LOOP;
+        LOOP
+         FETCH c_musica INTO v_musica_duracao_segundos;
+         EXIT WHEN c_musica%NOTFOUND;
+         dbms_output.put_line('Duração: ' || v_musica_duracao_segundos);
+      END LOOP;
+      CLOSE cursor_album;
+      CLOSE c_musica;
+   END;
+
+DECLARE
+   v_duracao Number;
+BEGIN
+   duracaoAlbum(3, v_duracao);
+   dbms_output.put_line(v_duracao);
+END;
+/
