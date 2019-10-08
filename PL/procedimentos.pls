@@ -112,6 +112,10 @@ BEGIN
    dbms_output.put_line('Há' || counter || ' usuarios com a idade ' || target_idade);
    CLOSE c_usuario;
 END;
+EXCEPTION
+  WHEN no_data_found THEN
+   dbms_output.put_line('Não há usuarios com a idade ' || target_idade);
+    ;
 EXEC pessoasComIdade(7);
 
 -- TRIGGER COMANDO
