@@ -143,3 +143,28 @@ BEGIN
    dbms_output.put_line(v_duracao);
 END;
 /
+
+
+CREATE OR REPLACE PROCEDURE pessoasComIdade(
+    target_idade Usuario.idade%type
+) IS
+   counter Number;
+   v_id Usuario.usuario_id%type;
+   v_idade Usuario.idade%type;
+   
+   CURSOR c_usuario IS
+      SELECT * FROM Usuario;
+BEGIN
+   counter := 0;
+   OPEN c_usuario;
+   LOOP
+      EXIT WHEN c_usuario%NOTFOUND;
+      FETCH c_usuario INTO v_id, v_idade;
+      IF v_idade = target_idade THEN
+        counter := counter + 1;
+      END IF;
+   END LOOP;
+   dbms_output.put_line('Há' || counter || ' usuarios com a idade ' || target_idade);
+   CLOSE c_usuario;
+END;
+EXEC pessoasComIdade(7);
