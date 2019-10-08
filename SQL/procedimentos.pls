@@ -89,22 +89,7 @@ BEGIN
    v_duracao = duracaoAlbum(3);
    dbms_output.put_line(v_duracao)
 END;
-DECLARE
-   today Date;
-   CURSOR c_usuario id_musica 
-      SELECT * FROM USUARIO;
-   v_id Pessoa.id%type;
-BEGIN
-   today := SYSDATE;
-   OPEN c_usuario;
-   dbms_output.put_line(TO_CHAR(today))
-   LOOP
-      FETCH c_usuario v
-      c_usuario := c_usuario.NEXT;
-      dbms_output.put_line('USUARIO : ' || c_usuario.id);
-   END LOOP
-   CLOSE c_usuario;
-END;
+
 /
 CREATE OR REPLACE PROCEDURE duracaoAlbum(
    in_album_id IN Album.album_id%type,
