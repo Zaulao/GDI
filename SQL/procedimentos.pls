@@ -89,14 +89,12 @@ BEGIN
 END;
 /
 
-
 CREATE OR REPLACE PROCEDURE pessoasComIdade(
-    target_idade Usuario.idade%type
+    target_idade Usuario.idade%type,
+    counter OUT Number
 ) IS
-   counter Number;
    v_id Usuario.usuario_id%type;
    v_idade Usuario.idade%type;
-   
    CURSOR c_usuario IS
       SELECT * FROM Usuario;
 BEGIN
@@ -109,7 +107,39 @@ BEGIN
         counter := counter + 1;
       END IF;
    END LOOP;
-   dbms_output.put_line('Há' || counter || ' usuarios com a idade ' || target_idade);
+   dbms_output.put_line('Usuários com idade ' || target_idade || ': ' || counter);
    CLOSE c_usuario;
 END;
-EXEC pessoasComIdade(7);
+DECLARE
+    counter Number;
+BEGIN
+    pessoasComIdade(7, counter);
+END;
+
+
+CREATE OR REPLACE PROCEDURE pessoasComRangeIdade(
+   menor_idade IN Usuario.idade%type,
+   maior_idade IN Usuario.idade%type,
+   total OUT Number
+) IS
+    aux Number;
+BEGIN
+   total := 0;
+   FOR i IN menor_idade .. maior_idade-1
+   LOOP
+      aux := 0;
+      pessoasComIdade(i, aux);
+      total := total + aux;
+   END LOOP;
+   dbms_output.put_line('Usuários com idade entre ' || menor_idade || ' e ' || maior_idade || ': ' || total);
+END;
+DECLARE
+    menor_idade Number;
+    maior_idade Number;
+    res Number;
+BEGIN
+    menor_idade := 0;
+    maior_idade := 10;
+    pessoasComRangeIdade(menor_idade, maior_idade, res);
+END;
+
