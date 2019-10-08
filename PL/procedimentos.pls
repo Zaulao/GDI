@@ -113,3 +113,30 @@ BEGIN
    CLOSE c_usuario;
 END;
 EXEC pessoasComIdade(7);
+
+-- TRIGGER COMANDO
+
+CREATE OR REPLACE TRIGGER Delete_Pessoa
+BEFORE DELETE ON Pessoa
+DECLARE
+    ID NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO ID 
+    FROM Pessoa;
+    IF  ID = 0 THEN    
+        RAISE_APPLICATION_ERROR(-21000, 'Não se pode excluir uma Pessoa unica');
+    END IF;
+END Delete_Pessoa;
+/
+
+-- TRIGGER LINHA
+
+CREATE OR REPLACE TRIGGER Insert_Musica
+BEFORE INSERT ON Musica
+FOR EACH ROW
+BEGIN
+IF :NEW.duracao_segundos < 0 THEN
+    RAISE_APPLICATION_ERROR(-20101, 'Duracao da musica não pode ser menor que 0');
+END IF;
+END;
+/
