@@ -12,7 +12,7 @@ BEGIN
 END; 
 /
 
--- CRIAÇAO DE TABELA COM QUANTIDADE DE MÚSICAS DE GENERO JAZZ E ROCK
+-- CRIAÇAO DE TABLE COM QUANTIDADE DE MÚSICAS DE GENERO JAZZ E ROCK
 
 DECLARE 
    TYPE musicas_genero IS TABLE OF NUMBER INDEX BY VARCHAR2(20); 
@@ -33,59 +33,33 @@ BEGIN
     -- printing the table 
    nomeGenero := musicas_genero_lista.FIRST; 
    WHILE nomeGenero IS NOT null LOOP 
-      dbms_output.put_line 
-      ('O genero ' || nomeGenero || ' possui ' || TO_CHAR(musicas_genero_lista(nomeGenero)) || ' músicas'); 
+      CASE nomeGenero
+      when 'Jazz' then dbms_output.put_line('Existem ' || musicas_genero_lista(nomeGenero) || ' músicas de Jazz');
+      when 'Rock' then dbms_output.put_line('Existem ' || musicas_genero_lista(nomeGenero) || ' músicas de Rock');
+      END CASE;
       nomeGenero := musicas_genero_lista.NEXT(nomeGenero); 
    END LOOP; 
 END; 
 /
 
+-- CRIAÇAO DE FUNCAO QUE RETORNA MEDIA DA DURACAO DAS MUSICAS
+
 CREATE OR REPLACE FUNCTION media_duracao_musicas
-  RETURN NUMBER;
- IS 
-  n NUMBER; 
-BEGIN 
-SELECT AVG(duracao_segundos) INTO n
-FROM Musica;
-RETURN n;
+    RETURN NUMBER IS media NUMBER;
+BEGIN
+    SELECT AVG(duracao_segundos) into media
+    FROM Musica;
+    RETURN media;
 END;
 /
 
-CREATE OR REPLACE PROCEDURE duracaoAlbum(
-   in_album_id IN Album.album_id%type,
-   v_musica_duracao_segundos OUT Musica.duracao_segundos%type
-) IS
-   CURSOR cursor_album IS
-      SELECT * from Album A WHERE (a.album_id = in_album_id);
-   v_id Album.album_id%type;
-   v_nome Album.nome%type;
-   v_data_lancamento Album.data_lancamento%type;
-   v_musica_id Musica.musica_id%type;
-   v_musica_nome Musica.nome%type;
-   CURSOR c_musica IS
-      SELECT SUM(M.duracao_segundos) from Musica M, Album_Musica AM WHERE (M.musica_id = AM.id_musica AND AM.id_album = in_album_id );
-   BEGIN
-      OPEN cursor_album;
-      OPEN c_musica;
-      LOOP
-         FETCH cursor_album INTO v_id, v_nome, v_data_lancamento;
-         EXIT WHEN cursor_album%NOTFOUND;
-         dbms_output.put_line('Nome do album: ' || v_nome);
-      END LOOP;
-        LOOP
-         FETCH c_musica INTO v_musica_duracao_segundos;
-         EXIT WHEN c_musica%NOTFOUND;
-         dbms_output.put_line('Duração: ' || v_musica_duracao_segundos);
-      END LOOP;
-      CLOSE cursor_album;
-      CLOSE c_musica;
-   END;
+-- CONSULTA DA MEDIA DE DURACAO DAS MUSICAS
 
 DECLARE
-   v_duracao Number;
+    media NUMBER;
 BEGIN
-   duracaoAlbum(3, v_duracao);
-   dbms_output.put_line(v_duracao);
+    media := media_duracao_musicas;
+    dbms_output.put_line(media);
 END;
 /
 
