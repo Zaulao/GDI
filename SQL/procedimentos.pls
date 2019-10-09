@@ -32,12 +32,12 @@ BEGIN
     
     -- printing the table 
    nomeGenero := musicas_genero_lista.FIRST; 
-   WHILE nomeGenero IS NOT null LOOP
+   WHILE nomeGenero IS NOT null LOOP 
       CASE nomeGenero
       when 'Jazz' then dbms_output.put_line('Existem ' || musicas_genero_lista(nomeGenero) || ' músicas de Jazz');
       when 'Rock' then dbms_output.put_line('Existem ' || musicas_genero_lista(nomeGenero) || ' músicas de Rock');
-      nomeGenero := musicas_genero_lista.NEXT(nomeGenero); 
       END CASE;
+      nomeGenero := musicas_genero_lista.NEXT(nomeGenero); 
    END LOOP; 
 END; 
 /

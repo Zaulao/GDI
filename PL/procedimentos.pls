@@ -36,6 +36,7 @@ BEGIN
       CASE nomeGenero
       when 'Jazz' then dbms_output.put_line('Existem ' || musicas_genero_lista(nomeGenero) || ' músicas de Jazz');
       when 'Rock' then dbms_output.put_line('Existem ' || musicas_genero_lista(nomeGenero) || ' músicas de Rock');
+      END CASE;
       nomeGenero := musicas_genero_lista.NEXT(nomeGenero); 
    END LOOP; 
 END; 
